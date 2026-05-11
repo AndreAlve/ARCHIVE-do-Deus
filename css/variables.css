@@ -1,0 +1,33 @@
+:root {
+    /* COLORS */
+    --bg-primary:#050816;
+    --bg-secondary:#0b1023;
+    --bg-card:#11182d;
+
+    --gold:#d4af37;
+    --gold-light:#f7d774;
+
+    --text-primary:#ffffff;
+    --text-secondary:#b8c0d4;
+
+    --danger:#ff4d6d;
+    --success:#00d9a5;
+    
+   /* TYPOGRAPHY */
+
+    --font-title:'Cinzel', serif;
+    --font-body:'Inter', sans-serif;
+
+    /* SPACING */
+
+    --container:1200px;
+
+    /* SHADOW */
+
+    --shadow-gold:
+    0 0 10px rgba(212,175,55,.3),
+    0 0 30px rgba(212,175,55,.15);
+
+
+    --rank-color:white;
+}

@@ -1,0 +1,174 @@
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .03) 1px,
+            transparent 1px),
+
+        linear-gradient(90deg,
+            rgba(255, 255, 255, .03) 1px,
+            transparent 1px);
+
+    background-size: 80px 80px;
+
+    -webkit-mask-image:
+        linear-gradient(to bottom,
+            transparent,
+            rgba(0, 0, 0, .8));
+
+    mask-image:
+        linear-gradient(to bottom,
+            transparent,
+            rgba(0, 0, 0, .8));
+}
+
+/* =========================
+    LIGHT EFFECT
+========================= */
+
+.hero-light {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle,
+            rgba(212, 175, 55, .10) 0%,
+            transparent 70%);
+    top: 50%;
+    right: -200px;
+    transform: translateY(-50%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+/* =========================
+    LINHA DECORATIVA
+========================= */
+
+.hero-subtitle::before {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin-right: 1rem;
+    vertical-align: middle;
+    box-shadow: var(--shadow-gold);
+}
+
+.hero-light {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.particles span {
+
+    position: absolute;
+
+    display: block;
+
+    width: 2px;
+    height: 2px;
+
+    background: var(--gold);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px var(--gold),
+        0 0 20px var(--gold);
+
+    opacity: .5;
+
+    animation: particleFloat linear infinite;
+}
+
+
+
+/* particle 1 */
+
+.particles span:nth-child(1) {
+
+    left: 10%;
+    bottom: -10%;
+
+    animation-duration: 8s;
+}
+
+/* particle 2 */
+
+.particles span:nth-child(2) {
+    left: 30%;
+    bottom: -20%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+/* particle 3 */
+
+.particles span:nth-child(3) {
+    left: 50%;
+    bottom: -15%;
+    animation-duration: 10s;
+    animation-delay: 1s;
+}
+
+/* particle 4 */
+
+.particles span:nth-child(4) {
+    left: 70%;
+    bottom: -5%;
+    animation-duration: 14s;
+    animation-delay: 3s;
+}
+
+/* particle 5 */
+
+.particles span:nth-child(5) {
+    left: 90%;
+    bottom: -25%;
+    animation-duration: 11s;
+    animation-delay: 4s;
+}
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 46px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.scroll-indicator span {
+    width: 4px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--gold);
+    animation: scrollMove 2s infinite;
+}

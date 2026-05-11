@@ -1,0 +1,66 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+
+    content: 'ZEUS';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18rem;
+    font-family: var(--font-title);
+    opacity: .03;
+    letter-spacing: 20px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: heroReveal 1.4s ease forwards;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: .6rem 1rem;
+    border: 1px solid rgba(212, 175, 55, .4);
+    border-radius: 999px;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    animation: heroReveal 1s ease forwards;
+    animation-delay: .2s;
+    opacity: 0;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-family: var(--font-title);
+    line-height: 1;
+    text-shadow: 0 0 20px rgba(255, 255, 255, .08);
+    position: relative;
+    transition: .5s;
+    animation: heroReveal 1.2s ease forwards, titleGlow 4s ease-in-out infinite;
+    animation-delay: .4s;
+    opacity: 0;
+
+}
+
+.hero h1:hover {
+    transform: translateY(-5px);
+    text-shadow:
+        0 0 30px rgba(212, 175, 55, .15);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+    animation: heroReveal 1.4s ease forwards;
+    animation-delay: .7s;
+    opacity: 0;
+}
