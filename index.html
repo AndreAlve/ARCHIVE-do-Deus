@@ -12,27 +12,38 @@
 <body>
 
     <div class="loader">
-    <div class="loader-content">
-        <div class="loader-logo">
-            ⚡
+        <div class="loader-content">
+            <div class="loader-logo">
+                ⚡
+            </div>
+            <h2>
+                ZEUS SYSTEM
+            </h2>
+            <div class="loader-bar">
+                <span></span>
+            </div>
         </div>
-        <h2>
-            ZEUS SYSTEM
-        </h2>
-        <div class="loader-bar">
-            <span></span>
-        </div>
+
+        <div class="cursor"></div>
+        <div class="cursor-trail"></div>
+        <div class="mouse-glow"></div>
+        <div class="hud-overlay"></div>
+
     </div>
-
-    <div class="cursor"></div>
-    <div class="cursor-trail"></div>
-    <div class="mouse-glow"></div>
-    <div class="hud-overlay"></div>
-
-</div>
     <main>
 
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
         <header class="navbar">
+
+            <button class="theme-toggle">
+                ☀️
+            </button>
             <div class="container navbar-container">
                 <a href="#" class="logo">
                     ZEUS ARCHIVE
@@ -230,6 +241,33 @@
             </div>
         </div>
     </section>
+    <!-- =========================
+     MODAL
+========================= -->
+
+<div class="modal-overlay">
+
+    <div class="modal-box">
+        <button class="modal-close">
+            ✕
+        </button>
+        <div class="modal-content">
+            <span class="modal-tag">
+                ARCHIVE
+            </span>
+            <h2>
+                Zeus Assassin
+            </h2>
+            <p>
+                Manifestação divina focada em
+                furtividade extrema,
+                manipulação atmosférica
+                e execução relâmpago.
+            </p>
+        </div>
+    </div>
+
+</div>
 
 </body>
 <script src="./js/app.js"></script>

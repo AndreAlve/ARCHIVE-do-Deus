@@ -155,3 +155,138 @@ window.addEventListener('load',()=>{
 
     },3000)
 })
+
+const menuToggle =
+document.querySelector('.menu-toggle')
+
+const navLinks =
+document.querySelector('.nav-links')
+
+menuToggle.addEventListener('click',()=>{
+
+    navLinks.classList.toggle('active')
+})
+
+const themeToggle =
+document.querySelector('.theme-toggle')
+
+/* =========================
+   LOAD THEME
+========================= */
+
+if(localStorage.getItem('theme')
+=== 'light'){
+
+    document.body
+    .classList
+    .add('light')
+}
+
+/* =========================
+   TOGGLE THEME
+========================= */
+
+themeToggle
+.addEventListener('click',()=>{
+
+    document.body
+    .classList
+    .toggle('light')
+
+    /* save */
+
+    if(document.body
+    .classList
+    .contains('light')){
+
+        localStorage
+        .setItem(
+            'theme',
+            'light'
+        )
+
+    }else{
+
+        localStorage
+        .setItem(
+            'theme',
+            'dark'
+        )
+    }
+
+    updateThemeIcon()
+})
+
+function updateThemeIcon(){
+
+    if(document.body
+    .classList
+    .contains('light')){
+        themeToggle.innerHTML =
+        '🌙'
+    }else{
+        themeToggle.innerHTML =
+        '☀️'
+    }
+}
+
+updateThemeIcon()
+
+
+const modal =
+document.querySelector(
+'.modal-overlay'
+)
+
+const openModal =
+document.querySelector(
+'.open-modal'
+)
+
+const closeModal =
+document.querySelector(
+'.modal-close'
+)
+
+/* OPEN */
+
+openModal
+.addEventListener('click',()=>{
+
+    modal.classList.add('active')
+})
+
+/* CLOSE */
+
+closeModal
+.addEventListener('click',()=>{
+
+    modal.classList.remove('active')
+})
+
+modal.addEventListener('click',(e)=>{
+
+    if(e.target === modal){
+        modal.classList.remove(
+            'active'
+        )
+    }
+})
+
+window.addEventListener('keydown',(e)=>{
+
+    if(e.key === 'Escape'){
+        modal.classList.remove(
+            'active'
+        )
+    }
+})
+
+document.body
+.classList
+.add('modal-open')
+
+document.body
+.classList
+.remove('modal-open')
+

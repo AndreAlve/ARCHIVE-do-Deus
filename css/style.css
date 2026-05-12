@@ -2,6 +2,7 @@
 @import url("./variables.css");
 @import url("./hero.css");
 @import url('./tabs.css');
+@import url('./responsive.css');
 @import url("./animations.css");
 @import url("./components/navbar.css");
 @import url("./components/hero.css");
@@ -116,24 +117,16 @@ body {
 .cursor {
 
     position: fixed;
-
     width: 14px;
     height: 14px;
-
     border-radius: 50%;
-
     background: var(--gold);
-
     pointer-events: none;
-
     z-index: 9999;
-
     transform:
         translate(-50%, -50%);
-
     box-shadow:
         0 0 20px rgba(212, 175, 55, .6);
-
     mix-blend-mode: screen;
 }
 
@@ -183,7 +176,7 @@ body {
 .loader {
     position: fixed;
     inset: 0;
-    background: #060606;
+    background:var(--background);
     z-index: 99999;
     display: flex;
     justify-content: center;
@@ -216,8 +209,7 @@ body {
 .loader-bar{
     width:240px;
     height:4px;
-    background:
-    rgba(255,255,255,.05);
+    background:var(--surface);
     border-radius:999px;
     overflow:hidden;
 }
@@ -271,4 +263,185 @@ section::after{
         rgba(212,175,55,.2),
         transparent
     );
+}
+
+/* =========================
+   LIGHT THEME
+========================= */
+
+body.light{
+    --background:#f5f5f5;
+    --surface:
+    rgba(255,255,255,.7);
+    --surface-strong:
+    rgba(255,255,255,.9);
+    --border:
+    rgba(0,0,0,.08);
+    --text-primary:#111111;
+    --text-secondary:
+    rgba(0,0,0,.7);
+    --shadow-soft:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-toggle{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:
+    1px solid var(--border);
+    background:
+    var(--surface);
+    color:var(--text-primary);
+    cursor:pointer;
+    backdrop-filter:var(--blur);
+    transition:.3s;
+}
+
+.theme-toggle:hover{
+    transform:
+    translateY(-3px);
+    box-shadow:
+    var(--shadow-soft);
+}
+
+/* =========================
+   THEME TRANSITION
+========================= */
+
+body,
+.navbar,
+.status-card,
+.tab-panel,
+button{
+    transition:
+    background .4s ease,
+    color .4s ease,
+    border .4s ease;
+}
+
+
+/* =========================
+   MODAL OVERLAY
+========================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:
+    rgba(0,0,0,.6);
+    backdrop-filter:
+    blur(10px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    opacity:0;
+    visibility:hidden;
+    transition:
+    .4s ease;
+}
+
+/* =========================
+   MODAL BOX
+========================= */
+
+.modal-box{
+    width:min(90%,600px);
+    padding:3rem;
+    border-radius:32px;
+    background:
+    var(--surface);
+    border:
+    1px solid var(--border);
+    backdrop-filter:
+    var(--blur);
+    position:relative;
+    transform:
+    translateY(40px)
+    scale(.96);
+    opacity:0;
+    transition:
+    .5s ease;
+    box-shadow:
+    var(--shadow-soft);
+}
+
+/* =========================
+   ACTIVE MODAL
+========================= */
+
+.modal-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-overlay.active
+.modal-box{
+    transform:
+    translateY(0)
+    scale(1);
+    opacity:1;
+}
+
+/* =========================
+   MODAL CLOSE
+========================= */
+
+.modal-close{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:
+    1px solid var(--border);
+    background:
+    transparent;
+    color:
+    var(--text-primary);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.modal-close:hover{
+    transform:
+    rotate(90deg);
+    border-color:
+    var(--gold);
+    color:
+    var(--gold);
+}
+
+body.modal-open{
+
+    overflow:hidden;
+}
+
+/* =========================
+   MODAL GLOW
+========================= */
+
+.modal-box::before{
+
+    content:'';
+    position:absolute;
+    inset:-1px;
+    border-radius:inherit;
+    background:
+    linear-gradient(
+        135deg,
+        rgba(212,175,55,.3),
+        transparent,
+        rgba(212,175,55,.2)
+    );
+    opacity:.5;
+    z-index:-1;
+    filter:
+    blur(20px);
 }
